@@ -1,2 +1,2 @@
-# IAC_LABS_2022_GROUP_17
-Repo for group 17 containing files for the IAC labs 2022
+# IAC_LAB4_GROUPP_17
+Repo for group 17 containing files for the IAC lab 4
