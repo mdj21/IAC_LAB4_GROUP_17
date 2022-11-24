@@ -34,10 +34,7 @@ ALU ALU1 (
     .EQ(EQ)
 );
 
-always_ff@(*) begin
-    if (ALUsrc): ALUop2 <= Immop;
-    else: ALUop2 <= RD2;
-end
+assign ALUop2 = ALUsrc? Immop:RD2;
 
 endmodule
 
