@@ -13,7 +13,7 @@ logic [ADD_WIDTH-1:0] branch_pc, inc_pc, next_pc;
 assign branch_pc = PC + Immop;
 assign inc_pc = PC + 32'd4;
 
-assign next_pc = if pcsrc ? branch_pc : inc_pc;
+assign next_pc = pcsrc ? branch_pc : inc_pc;
 
 always_ff @(posedge clk) begin
     if (!rst): PC <= next_pc;
