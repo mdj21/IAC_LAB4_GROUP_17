@@ -12,20 +12,20 @@ module controlUnit #(
 
     always @ (instr) begin
         
-        if (instr[6:0] == 7'b1100011 and instr[14:12] == 3'b001) begin
-            RegWrite = 1'b1;
-            //assign ALUctrl = 1'b1;
-            assign ALUsrc = 1'b0;
-            assign ImmSrc = 1'b0;
-            assign PCsrc = 1'b0;
+        if (instr[6:0] == 7'b1100011 && instr[14:12] == 3'b001) begin
+            RegWrite <= 1'b1;
+            // ALUctrl <= 1'b1;
+            ALUsrc <= 1'b0;
+            ImmSrc <= 1'b0;
+            PCsrc <= 1'b0;
         end
 
-        if (instr[6:0] == 7'b0010011 and instr[14:12] == 3'b000) begin
-            assign RegWrite = 1'b0;
-            //assign ALUctrl = 1'b1;
-            assign ALUsrc = 1'b1;
-            assign ImmSrc = 1'b1;
-            assign PCsrc = 1'b1;
+        if (instr[6:0] == 7'b0010011 && instr[14:12] == 3'b000) begin
+            RegWrite <= 1'b0;
+            // ALUctrl <= 1'b1;
+            ALUsrc <= 1'b1;
+            ImmSrc <= 1'b1;
+            PCsrc <= 1'b1;
         end
     end
 
