@@ -13,7 +13,7 @@ module controlUnit #(
     always @ (instr) begin
         
         if (instr[6:0] == 7'b1100011 and instr[14:12] == 3'b001) begin
-            assign RegWrite = 1'b1;
+            RegWrite = 1'b1;
             //assign ALUctrl = 1'b1;
             assign ALUsrc = 1'b0;
             assign ImmSrc = 1'b0;
