@@ -15,7 +15,7 @@ end;
 
 always_comb
     //output is asynchronus
-    RD <= {rom_array[A+{30{1'b0}, 2'b11}], rom_array[A+{30{1'b0}, 2'b10}] ,rom_array[A+{31{1'b0}, 1'b1}], rom_array[A]};
+    RD = {rom_array[{A+{{30{1'b0}}, 2'b11}}], rom_array[{A+{{30{1'b0}}, 2'b10}}] ,rom_array[{A+{{31{1'b0}}, 1'b1}}], rom_array[A]};
 
 endmodule
 
