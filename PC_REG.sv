@@ -8,17 +8,20 @@ module PC_REG #(
     output [ADD_WIDTH-1:0] PC
 );
 
-logic [ADD_WIDTH-1:0] branch_pc, inc_pc, next_pc;
+logic [ADD_WIDTH-1:0] branch_pc, inc_pc, next_pc, tmp_pc;
 
-assign branch_pc = PC + Immop;
-assign inc_pc = PC + 32'd4;
+assign branch_pc = tmp_pc + Immop;
+assign inc_pc = tmp_pc + 32'd4;
 
 assign next_pc = pcsrc ? branch_pc : inc_pc;
 
 always_ff @(posedge clk) begin
-    if (!rst): PC <= next_pc;
-    else: PC <= 32'b0;
+    if (!rst)
+        tmp_pc <= next_pc;
+    else
+        tmp_pc <= 32'b0;
 end
 
+assign PC = tmp_pc;
 endmodule
 

@@ -18,7 +18,7 @@ logic [DATA_WIDTH-1:0] register [2**ADD_WIDTH-1:0];
 always_ff @(posedge clk) begin
     RD1 <= register[AD1];
     RD2 <= register[AD2];
-    if(WE3): register[AD3] <= WD3;
+    if(WE3) register[AD3] <= WD3;
     a0 <= register[5'd10];
 end
 
