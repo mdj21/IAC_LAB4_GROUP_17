@@ -6,7 +6,7 @@ module instrMem #(
 
 );
 
-logic [WIDTH-1:0] rom_array [2**WIDTH-1:0];
+logic [7:0] rom_array [256:0];
 
 initial begin
     $display("Loading ROM.");
