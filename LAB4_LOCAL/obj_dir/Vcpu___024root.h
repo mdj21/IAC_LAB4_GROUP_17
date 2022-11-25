@@ -28,7 +28,6 @@ class Vcpu___024root final : public VerilatedModule {
     IData/*31:0*/ cpu__DOT__PC_Reg__DOT__next_pc;
     IData/*31:0*/ cpu__DOT__PC_Reg__DOT__tmp_pc;
     IData/*31:0*/ cpu__DOT__reg_file_alu__DOT__RD1;
-    IData/*31:0*/ cpu__DOT__reg_file_alu__DOT__RD2;
     IData/*31:0*/ cpu__DOT__reg_file_alu__DOT__ALUop2;
     VlUnpacked<CData/*7:0*/, 1024> cpu__DOT__instr_mem__DOT__rom_array;
     VlUnpacked<IData/*31:0*/, 32> cpu__DOT__reg_file_alu__DOT__REG__DOT__register;

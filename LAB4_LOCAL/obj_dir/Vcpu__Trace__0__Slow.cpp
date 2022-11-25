@@ -173,7 +173,9 @@ VL_ATTR_COLD void Vcpu___024root__trace_full_sub_0(Vcpu___024root* vlSelf, Veril
     bufp->fullCData(oldp+14,((0x1fU & (vlSelf->cpu__DOT__instr 
                                        >> 7U))),5);
     bufp->fullIData(oldp+15,(vlSelf->cpu__DOT__reg_file_alu__DOT__RD1),32);
-    bufp->fullIData(oldp+16,(vlSelf->cpu__DOT__reg_file_alu__DOT__RD2),32);
+    bufp->fullIData(oldp+16,(vlSelf->cpu__DOT__reg_file_alu__DOT__REG__DOT__register
+                             [(0x1fU & (vlSelf->cpu__DOT__instr 
+                                        >> 0x14U))]),32);
     bufp->fullIData(oldp+17,(vlSelf->cpu__DOT__reg_file_alu__DOT__ALUop2),32);
     bufp->fullIData(oldp+18,((vlSelf->cpu__DOT__reg_file_alu__DOT__RD1 
                               + vlSelf->cpu__DOT__reg_file_alu__DOT__ALUop2)),32);

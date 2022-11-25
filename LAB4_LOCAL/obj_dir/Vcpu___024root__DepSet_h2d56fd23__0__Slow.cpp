@@ -49,6 +49,8 @@ VL_ATTR_COLD void Vcpu___024root___settle__TOP__0(Vcpu___024root* vlSelf) {
         vlSelf->cpu__DOT__ImmSrc = 0U;
         vlSelf->cpu__DOT__PCsrc = 0U;
     }
+    vlSelf->cpu__DOT__reg_file_alu__DOT__RD1 = vlSelf->cpu__DOT__reg_file_alu__DOT__REG__DOT__register
+        [(0x1fU & (vlSelf->cpu__DOT__instr >> 0xfU))];
     if ((IData)((0x1063U == (0x707fU & vlSelf->cpu__DOT__instr)))) {
         vlSelf->cpu__DOT__RegWrite = 0U;
         vlSelf->cpu__DOT__ALUsrc = 0U;
@@ -77,7 +79,12 @@ VL_ATTR_COLD void Vcpu___024root___settle__TOP__0(Vcpu___024root* vlSelf) {
     }
     vlSelf->cpu__DOT__reg_file_alu__DOT__ALUop2 = ((IData)(vlSelf->cpu__DOT__ALUsrc)
                                                     ? vlSelf->cpu__DOT__ImmOp
-                                                    : vlSelf->cpu__DOT__reg_file_alu__DOT__RD2);
+                                                    : 
+                                                   vlSelf->cpu__DOT__reg_file_alu__DOT__REG__DOT__register
+                                                   [
+                                                   (0x1fU 
+                                                    & (vlSelf->cpu__DOT__instr 
+                                                       >> 0x14U))]);
     if ((IData)((0x1063U == (0x707fU & vlSelf->cpu__DOT__instr)))) {
         vlSelf->cpu__DOT__PCsrc = (vlSelf->cpu__DOT__reg_file_alu__DOT__RD1 
                                    != vlSelf->cpu__DOT__reg_file_alu__DOT__ALUop2);
@@ -136,7 +143,6 @@ VL_ATTR_COLD void Vcpu___024root___ctor_var_reset(Vcpu___024root* vlSelf) {
         vlSelf->cpu__DOT__instr_mem__DOT__rom_array[__Vi0] = VL_RAND_RESET_I(8);
     }
     vlSelf->cpu__DOT__reg_file_alu__DOT__RD1 = VL_RAND_RESET_I(32);
-    vlSelf->cpu__DOT__reg_file_alu__DOT__RD2 = VL_RAND_RESET_I(32);
     vlSelf->cpu__DOT__reg_file_alu__DOT__ALUop2 = VL_RAND_RESET_I(32);
     for (int __Vi0=0; __Vi0<32; ++__Vi0) {
         vlSelf->cpu__DOT__reg_file_alu__DOT__REG__DOT__register[__Vi0] = VL_RAND_RESET_I(32);
